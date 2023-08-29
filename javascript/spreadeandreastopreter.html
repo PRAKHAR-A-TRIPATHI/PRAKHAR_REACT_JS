@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // spread : unpack element.[]{}
+    const num = [1,2,3,4]
+    console.log([...num])
+
+    // reset : pack element 
+
+    let num1 = [1,2,3];
+    let num2 = [4,5,6];
+
+    console.log([...num1,...num])
+    console.log([100,...num1,...num,2000   ])
+
+    let name ="prakhar"
+    console.log([...name])
+
+    
+    let obj = {
+        name:"prakhar",
+        age:18,
+        roll:"ce"
+    }
+
+    const obj1 = {
+        ...obj
+    }
+    console.log(obj1)
+</script>
+</html>

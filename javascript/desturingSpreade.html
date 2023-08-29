@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring, Spread Operator
+    </title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arr = [1,2,34,54,6,78,9,0,46,345,35];
+    
+    let [a,b,c,d,e,f,g,h,...rest]=arr
+
+    console.log(a,b,c,rest)
+
+    let obj = {
+        name:"prakhar",
+        age:18,
+        roll:"ce"
+    }
+    let {name,age,roll}=obj;
+    console.log(name,age)
+
+    console.log({...obj,name: "shlok"})
+    // console.log({name: "shlok",...obj}) ??
+
+    // sprade opreater
+    let arr1 = [1,2,3,45,30];
+    let obj1 = {...arr1}
+    console.log(obj1);
+
+    function sum(a,b,c){
+        console.log(a+b+c);
+    }
+    sum(...arr1)
+
+
+</script>
+</html>
