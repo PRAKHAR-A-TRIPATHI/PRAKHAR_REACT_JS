@@ -10,19 +10,19 @@
 </body>
 <script>
     // spread : unpack element.[]{}
-    const num = [1,2,3,4]
-    console.log([...num])
+    // const num = [1,2,3,4]
+    // console.log([...num])
 
-    // reset : pack element 
+    // // reset : pack element 
 
-    let num1 = [1,2,3];
-    let num2 = [4,5,6];
+    // let num1 = [1,2,3];
+    // let num2 = [4,5,6];
 
-    console.log([...num1,...num])
-    console.log([100,...num1,...num,2000   ])
+    // console.log([...num1,...num])
+    // console.log([100,...num1,...num,2000   ])
 
-    let name ="prakhar"
-    console.log([...name])
+    // let name ="prakhar"
+    // console.log([...name])
 
     
     let obj = {
@@ -32,8 +32,19 @@
     }
 
     const obj1 = {
-        ...obj
+        ...obj,
+        // addresh:501,
     }
     console.log(obj1)
+
+    // let list = ["audi","honda","bmw"];
+    // let newlist = [...list,"lamborgingi"]
+    // console.log(newlist);
+
+    // reset
+    function hello (...all){
+        console.log(all);
+    }
+    hello(1,2,3,36,57,)
 </script>
 </html>
