@@ -32,3 +32,10 @@ const mack_air = new Mackbook("air" , "apple");
 mack_air.logIn()
 mack_air.run()
 
+import { printTable } from "./expot.js";
+printTable(20)
+
+// const hello = require("./expot.js")
+// hello() 
+
+

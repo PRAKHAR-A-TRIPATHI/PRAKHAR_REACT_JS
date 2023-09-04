@@ -18,5 +18,16 @@ function defaultfun(a,b){
 export default defaultfun
 
 
+export const printTable = (table) =>{
+    for (let index = 1; index <= 10; index++) {
+        let a=  `${table} * ${index} = ${table*index}`
+        console.log(a)
+    }
+}
+// module.export = printTable;
 
+// const hello  =  () => {
+//     console.log("modules in javascript")
+// }
 
+// modules.export = hello;

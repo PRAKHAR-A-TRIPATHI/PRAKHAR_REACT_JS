@@ -1,0 +1,17 @@
+Sure! Here is a brief overview of each topic:
+
+- **Function Declarations and Arrow Functions**: Function declarations are the traditional way of defining functions in JavaScript, using the `function` keyword. Arrow functions, introduced in ES6, provide a more concise syntax for defining functions using the `=>` syntax. They also have some differences in behavior, such as not having their own `this` binding.
+
+- **Template Literals**: Template literals, also introduced in ES6, allow for the creation of strings with embedded expressions. They are enclosed by backtick (`) characters and can contain placeholders indicated by `${expression}`.
+
+- **Short Conditionals: &&, ||, Ternary Operator**: Short conditionals are ways to write more concise conditional statements. The `&&` and `||` operators can be used to create short-circuit evaluations, where the second operand is only evaluated if the first operand is truthy (`||`) or falsy (`&&`). The ternary operator (`condition ? expression1 : expression2`) is a s'horthand way of writing an `if...else` statement.
+
+- **Three Array Methods: .map(), .filter(), .reduce()**: These are three commonly used array methods. The `.map()` method creates a new array with the results of calling a provided function on every element in the calling array. The `.filter()` method creates a new array with all elements that pass the test implemented by the provided function. The `.reduce()` method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.
+
+- **Object Tricks: Property Shorthand, Destructuring, Spread Operator**: Property shorthand is a shorthand syntax for defining object properties where the key and value share the same name. Destructuring allows for unpacking values from arrays or properties from objects into distinct variables. The spread operator allows for expanding iterables (such as arrays) into individual elements.
+
+- **Promises + Async/Await Syntax**: Promises provide a way to handle asynchronous operations, allowing for chaining and better error handling. The `async/await` syntax provides a more concise and readable way to work with promises, allowing for writing asynchronous code that looks similar to synchronous code.
+
+- **ES Modules + Import / Export syntax**: ES Modules are the official standard format for packaging JavaScript code for reuse. They are defined using `import` and `export` statements, allowing for importing and exporting values between modules.
+
+- **Rest and Spread Operators in JavaScript**: The rest operator allows for representing an indefinite number of arguments as an array, while the spread operator allows for expanding iterables (such as arrays) into individual elements.
