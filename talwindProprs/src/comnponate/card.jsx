@@ -1,4 +1,5 @@
 import React from 'react'
+
 function Card({channel,btn="visit me", }) {
   return (
     <div className="flex font-sans">
@@ -74,4 +75,8 @@ function Card({channel,btn="visit me", }) {
   )
 }
 
+// Card.propTypes ={
+//   channel: propTypes.string,
+//   btn: propTypes.string,
+// }
 export default Card

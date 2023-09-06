@@ -1,13 +1,15 @@
 
 import './App.css';
-import Coditional from './coditional';
+// import Coditional from './coditional';
+import UseState from './component/UseState';
 
 function App() {
   return (
     <>
-      <Coditional/>
+      {/* <Coditional/> */}
+      <UseState/>
     </>
   );
-}
+} 
 
 export default App;
