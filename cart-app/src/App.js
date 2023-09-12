@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './comonenets/Navbar';
 import ProductList from './comonenets/ProductList.js';
@@ -8,86 +8,84 @@ import AddItem from './comonenets/addItem';
 function App() {
   const product = [
     {
-      price:999,
-      name:"iphone",
-      quntity:0
+      price: 999,
+      name: "iphone",
+      quntity: 0
     },
     {
-      price:199,
-      name:"vivo",
-      quntity:0
+      price: 199,
+      name: "vivo",
+      quntity: 0
     },
     {
-      price:90,
-      name:"Redmi",
-      quntity:0
+      price: 90,
+      name: "Redmi",
+      quntity: 0
     },
     {
-      price:290,
-      name:"Xiomi",
-      quntity:0
+      price: 290,
+      name: "Xiomi",
+      quntity: 0
     },
   ]
-  let [Product,setProducts]=useState(product);
-  let [totalAmount,setTotalAmount]=useState(0);
-  let incremernt = (index)=>{
+  let [Product, setProducts] = useState(product);
+  let [totalAmount, setTotalAmount] = useState(0);
+  let incremernt = (index) => {
     let newProduct = [...Product];
     let newtotalAmount = totalAmount;
     newtotalAmount += newProduct[index].price
     setTotalAmount(newtotalAmount)
     newProduct[index].quntity++;
-    
+
     setProducts(newProduct)
   }
-  let decrement = (index)=>{
+  let decrement = (index) => {
     let newProduct = [...Product];
     let newtotalAmount = totalAmount;
 
-    if(newProduct[index].quntity==0){
-      newProduct[index].quntity=0;
-    }else{
+    if (newProduct[index].quntity === 0) {
+      newProduct[index].quntity = 0;
+    } else {
       newProduct[index].quntity--;
       newtotalAmount -= newProduct[index].price;
     }
-    
+
     // newProduct[index].quntity>0 ? newProduct[index].quntity-- : newProduct[index].quntity=0;
     setProducts(newProduct)
     setTotalAmount(newtotalAmount)
   }
-  let reset = ()=>{
+  let reset = () => {
     let newProduct = [...Product];
-    newProduct.map((product)=>{
-      product.quntity=0;
-    })
+    newProduct.map((product) => product.quntity = 0)
     setProducts(newProduct)
     setTotalAmount(0)
   };
-  const remove = (index)=>{
+  const remove = (index) => {
     let newProduct = [...Product];
     let newtotalAmount = totalAmount;
     newtotalAmount -= newProduct[index].quntity * newProduct[index].price
-    newProduct.splice(index,1);
+    newProduct.splice(index, 1);
     setProducts(newProduct)
     setTotalAmount(newtotalAmount)
   }
-  const add = (name,price)=>{
+  const add = (name, price) => {
     let newProduct = [...Product];
     newProduct.push({
-      price:price,
-      name:name,
-      quntity:0
+      price: price,
+      name: name,
+      quntity: 0
     });
     setProducts(newProduct)
   }
   return (
-   <>    
-    <Navbar/>
-    <main className="container">
-      <AddItem add={add}/>
-    <ProductList product={Product} incremernt={incremernt} decrement={decrement} remove={remove} />
-    </main>
-    <Footer totalAmount={totalAmount} reset={reset}/>
-   </>
+    <>
+      <Navbar />
+      <main className="container">
+        <AddItem add={add} />
+        <ProductList product={Product} incremernt={incremernt} decrement={decrement} remove={remove} />
+      </main>
+      <Footer totalAmount={totalAmount} reset={reset} />
+    </>
   );
 }
 
