@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "Fname": "Vishal",
+      "Lname": "Shukla",
+      "email": "vishalShukala@gmail.com",
+      "password": "vishal$1752&123dsddAS",
+      "number": "1234567890",
+      "id": 2
+    },
+    {
+      "Fname": "Aman",
+      "Lname": "Mishra",
+      "email": "amanmishra123@gmail.com",
+      "password": "AmanMishara$123",
+      "number": "1234567890",
+      "id": 3
+    }
+  ]
+}
