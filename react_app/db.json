@@ -1,0 +1,35 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Medicine": [
+    {
+      "medicine": "Peracitmol",
+      "batchNum": "A3",
+      "quntity": "30",
+      "rack": "3",
+      "expireDate": "2023-10-28",
+      "id": 2
+    }
+  ],
+  "AddMedicineRecode": [
+    {
+      "medicine": "dolo",
+      "rack": "3",
+      "quntity": "40",
+      "id": 1
+    }
+  ],
+  "AddMedicineOutRecode": [
+    {
+      "medicine": "dolo",
+      "rack": "1",
+      "quntity": "30",
+      "id": 1
+    }
+  ]
+}

@@ -7,6 +7,7 @@ export default function Main() {
     // const [formData, setFormData] = useState([])
     const [isFormOpen, setIsFormOpen] = useState(false);
     const [isDeleteConfirmationOpen, setIsDeleteConfirmationOpen] = useState(false);
+    const [isEditConfirmationOpen, setIsEditConfirmationOpen] = useState(false);
     const [rowDataToDelete, setRowDataToDelete] = useState(false);
     const [apiData, setApiData] = useState([]);
     const [rowData, setRowData] = useState("");
@@ -14,6 +15,7 @@ export default function Main() {
     const [editBtn, setEditBtn] = useState(false);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [editID,setEditID] = useState("")
     // const [conf,setConf] = useState(false)
     // const [stop, setStop] = useState(true)
     // const [apiData, setApiData] = useState([]);
@@ -76,7 +78,7 @@ export default function Main() {
                 },
                 body: JSON.stringify(data),
             })
-            alert("update Sussesfully")
+            // alert("update Sussesfully")
             apiDataFun();
         } else {
             // setFormData([...formData, data]);
@@ -121,15 +123,23 @@ export default function Main() {
         apiDataFun();
     }
     
-    const editRowDataForm = (id) => {
+    function confirmEditData(){
         let updateData = apiData.find((val) => {
-            return val.id === id;
+            return val.id === editID;
         })
         // setEditDataId(id) 
         setEditBtn(true)
         // console.log(updateData)
         setRowData(updateData);
+        openForm()
+        setIsEditConfirmationOpen(false);
     }
+
+    const editRowDataForm = (id) => {
+        setEditID(id);
+        setIsEditConfirmationOpen(true);
+    }
+    
     // console.log(rowData)
     return (
         <div>
@@ -142,7 +152,8 @@ export default function Main() {
             </button>
             <DataForm isOpen={isFormOpen} onClose={closeForm} AddDataFun={AddDataFun} handlData={AddDataFun} rowData={rowData} editBtn={editBtn} />
             <DataTable apiData={apiData} deleteData={deleteData} openForm={openForm} editRowDataForm={editRowDataForm}  />
-            <Notification show={isDeleteConfirmationOpen} confirmDelete={confirmDelete} setIsDeleteConfirmationOpen={setIsDeleteConfirmationOpen} rowDataToDelete={rowDataToDelete}/>
+            <Notification show={isDeleteConfirmationOpen} confirmDelete={confirmDelete} setIsDeleteConfirmationOpen={setIsDeleteConfirmationOpen} rowDataToDelete={rowDataToDelete} work={"delete"} />
+            <Notification show={isEditConfirmationOpen} confirmDelete={confirmEditData} setIsDeleteConfirmationOpen={setIsEditConfirmationOpen} rowDataToDelete={editID} work={"update"} />
         </div >
     )
 }

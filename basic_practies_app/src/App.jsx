@@ -14,6 +14,7 @@ import Main from './forms/Main'
 import UseRef from './useRef/UseRef'
 import UnctrollForm from './useRef/UnctrollForm'
 import RoutingMain from './routing/RoutingMain'
+import ContexMain from './useContext/ContexMain'
 
 
 
@@ -23,7 +24,7 @@ function App() {
     <>
       {/* <Bg /> */}
       {/* <Password /> */}
-      <Example />
+      {/* <Example /> */}
       {/* <Button/> */}
       {/* <Main/> */}
       {/* <Solution1/> */}
@@ -34,6 +35,7 @@ function App() {
       {/* <UseRef/> */}
       {/* <UnctrollForm/> */}
       {/* <RoutingMain/> */}
+      {/* <ContexMain/> */}
     </>
   )
 }

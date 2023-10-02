@@ -14,17 +14,17 @@ export default function Example() {
         // }
         // ref.current.push(1);
         // console.log(ref)
-        // setCount(count + 1)
+        setCount(count + 1)
     }
-    useEffect(() => {
-        console.log('run')  
-        return () => {
-            console.log('clean')
-        };      
-    }, []);
+    // useEffect(() => {
+    //     console.log('run')  
+    //     return () => {
+    //         console.log('clean')
+    //     };      
+    // }, []);
     // useEffect(() => {
     //     console.log(`useEffect called ${count}`);
-    // }, [count===13]);
+    // }, [count===3]);
     let style = {
         backgroundColor: "blue",
         color: "white",

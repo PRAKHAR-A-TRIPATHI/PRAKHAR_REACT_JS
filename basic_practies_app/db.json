@@ -8,20 +8,36 @@
   ],
   "users": [
     {
-      "Fname": "Vishal",
-      "Lname": "Shukla",
+      "Fname": "prakhar",
+      "Lname": "Tripathi",
+      "email": "prakhar.tripathi@saeculumsolutions.com",
+      "password": "sfdr2432545erfr5t#dsfSWW",
+      "number": "1333345678",
+      "id": 1
+    },
+    {
+      "Fname": "Vishal Kumar",
+      "Lname": "Mishra",
       "email": "vishalShukala@gmail.com",
-      "password": "vishal$1752&123dsddAS",
-      "number": "1234567890",
+      "password": "q3445$Aws",
+      "number": "9999999999",
       "id": 2
     },
     {
       "Fname": "Aman",
       "Lname": "Mishra",
       "email": "amanmishra123@gmail.com",
-      "password": "AmanMishara$123",
+      "password": "cgre4h&GT",
       "number": "1234567890",
       "id": 3
+    },
+    {
+      "Fname": "Vishal kumar",
+      "Lname": "Shukla",
+      "email": "adityabhaodriya123@gmail.com",
+      "password": "!QAq2111",
+      "number": "1234560987",
+      "id": 4
     }
   ]
 }

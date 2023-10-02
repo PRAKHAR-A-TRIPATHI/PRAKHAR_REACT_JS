@@ -89,7 +89,7 @@ export default function DataTable({apiData,deleteData,openForm,editRowDataForm})
                                        onClick={()=>{deleteData(val.id)}}>Remove</button>
                                         <button className="rounded-lg bg-green-600 p-2 m-2 text-white"
                                        onClick={()=>{
-                                        openForm()
+                                       
                                         editRowDataForm(val.id)
                                        }}>Edit</button>
                                     </td>
