@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Task1 from './Task1';
 import Task2 from './Task2';
 import Home from './Home';
+import Task3 from './task3';
 
 export default function ColorMain() {
     let btnArray = ["btn1", "btn2", "btn3", "btn4", "btn5", "btn6", "btn7", "btn8"];
@@ -23,6 +24,10 @@ export default function ColorMain() {
                     <Route
                         path='task2'
                         element={<Task2 btnArray={btnArray} />} />
+
+                    <Route
+                        path='task3'
+                        element={<Task3 btnArray={btnArray} />} />
                 </Routes>
             </BrowserRouter>
         </div>
