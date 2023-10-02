@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import AddForm from './addForm';
+import AddForm from './AddForm';
 import TableComponent from './TableComponent';
 import AddREcodeForm from './AddREcodeForm';
 import Notifications from './Notifications';
@@ -11,6 +11,7 @@ export default function Main() {
     const [showModal, setShowModal] = useState(false);
     const [showRecordModal, setShowRecordModal] = useState(false);
     const [showRecorOutdModal, setShowRecorOutdModal] = useState(false);
+    const [RemovMedicineId, setRemovMedicineId] = useState("");
     const [apiData, setApiData] = useState([]);
     const [apiRecodeData, setApiRecodeData] = useState([]);
     const [apiRecodeOutData, setApiRecodeOutData] = useState([]);
@@ -91,24 +92,27 @@ export default function Main() {
 
     const apiDataFun = () => {
         Promise.all([
-          fetch("http://localhost:3001/Medicine").then((response) => response.json()),
-          fetch("http://localhost:3001/AddMedicineRecode").then((response) => response.json()),
-          fetch("http://localhost:3001/AddMedicineOutRecode").then((response) => response.json()),
+            fetch("http://localhost:3001/Medicine").then((response) => response.json()),
+            fetch("http://localhost:3001/AddMedicineRecode").then((response) => response.json()),
+            fetch("http://localhost:3001/AddMedicineOutRecode").then((response) => response.json()),
         ])
-          .then(([medicineData, recodeData, recodeOutData]) => {
-            setApiData(medicineData);
-            setApiRecodeData(recodeData);
-            setApiRecodeOutData(recodeOutData);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      };
-      
-    const deleteMedicine = (medicineId) => {
-        // showRemoveConfirmationHandler()
+            .then(([medicineData, recodeData, recodeOutData]) => {
+                setApiData(medicineData);
+                setApiRecodeData(recodeData);
+                setApiRecodeOutData(recodeOutData);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
 
-        fetch(`http://localhost:3001/Medicine/${medicineId}`, {
+    const deleteMedicine = (medicineId) => {
+        showRemoveConfirmationHandler()
+        setRemovMedicineId(medicineId)
+    };
+    const confirmDelete = () => {
+
+        fetch(`http://localhost:3001/Medicine/${RemovMedicineId}`, {
             method: "DELETE"
         }).then((response) => {
 
@@ -116,8 +120,7 @@ export default function Main() {
             console.log(error)
         })
         apiDataFun();
-    };
-
+    }
     return (
         <div>
             <div className=' d-flex justify-content-center '>
@@ -133,7 +136,7 @@ export default function Main() {
             </div>
             <AddForm showModal={showModal} handleCloseModal={handleCloseModal} addMedicineFun={addMedicineFun} />
             <TableComponent apiData={apiData} deleteMedicine={deleteMedicine} text={"ADD MEDICINE TABLE"} />
-            <Notifications showConfirmation={showRemoveConfirmation} hideConfirmationHandler={hideRemoveConfirmationHandler} data={"Are You Soure to Remove Medicine "} />
+            <Notifications showConfirmation={showRemoveConfirmation} hideConfirmationHandler={hideRemoveConfirmationHandler} data={"Are You Soure to Remove Medicine "} confirmDelete={confirmDelete} />
             <AddREcodeForm showRecordModal={showRecordModal} handleCloseRecordModal={handleCloseRecordModal} apiData={apiData} showConfirmationHandler={showConfirmationHandler} addMedicineFun={addMedicineFun} />
             <TableComponent apiData={apiRecodeData} showActions={false} text={"ADD RECODE TABLE"} />
             <AddRecodeOut showRecorOutdModal={showRecorOutdModal} handleCloseRecordOutModal={handleCloseRecordOutModal} apiRecodeData={apiRecodeData} addMedicineFun={addMedicineFun} showConfirmationHandler={showConfirmationHandler} />

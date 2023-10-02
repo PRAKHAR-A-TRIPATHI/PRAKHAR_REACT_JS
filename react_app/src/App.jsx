@@ -8,8 +8,8 @@ function App() {
   return (
     <>
     <div>
-      {/* <Main/> */}
-      <ColorMain/>
+      <Main/>
+      {/* <ColorMain/> */}
     </div>
     </>
   )

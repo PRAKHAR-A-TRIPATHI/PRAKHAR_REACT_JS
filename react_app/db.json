@@ -6,16 +6,7 @@
       "author": "typicode"
     }
   ],
-  "Medicine": [
-    {
-      "medicine": "Peracitmol",
-      "batchNum": "A3",
-      "quntity": "30",
-      "rack": "3",
-      "expireDate": "2023-10-28",
-      "id": 2
-    }
-  ],
+  "Medicine": [],
   "AddMedicineRecode": [
     {
       "medicine": "dolo",
