@@ -4,12 +4,12 @@ import ColorMain from './Component/new/ColorMain';
 
 
 
-function App() {
+function App() {  
   return (
     <>
     <div>
-      <Main/>
-      {/* <ColorMain/> */}
+      {/* <Main/> */}
+      <ColorMain/>
     </div>
     </>
   )

@@ -3,7 +3,7 @@ import Componnet from './Componnet';
 
 export default function UseRef() {
     const [input,setInput] = useState("");
-    // const [count,setCount] = useState();
+    // const [count,setCount] = useState(0);
     const count = useRef(0);
     // console.log(count)
     useEffect(()=>{

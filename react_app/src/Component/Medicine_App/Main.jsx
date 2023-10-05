@@ -8,6 +8,7 @@ import Notifications from './Notifications';
 import AddRecodeOut from './AddRecodeOut';
 
 export default function Main() {
+    // form open m
     const [showModal, setShowModal] = useState(false);
     const [showRecordModal, setShowRecordModal] = useState(false);
     const [showRecorOutdModal, setShowRecorOutdModal] = useState(false);
@@ -17,6 +18,8 @@ export default function Main() {
     const [apiRecodeOutData, setApiRecodeOutData] = useState([]);
     const [showConfirmation, setShowConfirmation] = useState(false);
     const [showRemoveConfirmation, setRomoveShowConfirmation] = useState(false);
+ 
+
     const handleOpenModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
 
@@ -35,7 +38,6 @@ export default function Main() {
     useEffect(() => {
         apiDataFun();
     }, [])
-    //    console.log(apiData)
 
     const addMedicineFun = (medicineData, api) => {
         fetch(api, {
@@ -106,16 +108,25 @@ export default function Main() {
             });
     };
 
+    const updateApiData= () => {
+            fetch(`http://localhost:3001/Medicine/${rowData.id}`, {
+                method: "PUT",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            })
+    }
+
     const deleteMedicine = (medicineId) => {
         showRemoveConfirmationHandler()
         setRemovMedicineId(medicineId)
     };
     const confirmDelete = () => {
-
         fetch(`http://localhost:3001/Medicine/${RemovMedicineId}`, {
             method: "DELETE"
         }).then((response) => {
-
         }).catch((error) => {
             console.log(error)
         })
@@ -134,14 +145,18 @@ export default function Main() {
                     Add Recode Out Medicine
                 </Button>
             </div>
-            <AddForm showModal={showModal} handleCloseModal={handleCloseModal} addMedicineFun={addMedicineFun} />
-            <TableComponent apiData={apiData} deleteMedicine={deleteMedicine} text={"ADD MEDICINE TABLE"} />
-            <Notifications showConfirmation={showRemoveConfirmation} hideConfirmationHandler={hideRemoveConfirmationHandler} data={"Are You Soure to Remove Medicine "} confirmDelete={confirmDelete} />
-            <AddREcodeForm showRecordModal={showRecordModal} handleCloseRecordModal={handleCloseRecordModal} apiData={apiData} showConfirmationHandler={showConfirmationHandler} addMedicineFun={addMedicineFun} />
-            <TableComponent apiData={apiRecodeData} showActions={false} text={"ADD RECODE TABLE"} />
-            <AddRecodeOut showRecorOutdModal={showRecorOutdModal} handleCloseRecordOutModal={handleCloseRecordOutModal} apiRecodeData={apiRecodeData} addMedicineFun={addMedicineFun} showConfirmationHandler={showConfirmationHandler} />
-            <TableComponent apiData={apiRecodeOutData} showActions={false} text={"ADD RECODE Out TABLE"} />
-            <Notifications showConfirmation={showConfirmation} hideConfirmationHandler={hideConfirmationHandler} data={"this Medicine not avalible in Store"} />
+            <div>
+                <AddForm showModal={showModal} handleCloseModal={handleCloseModal} addMedicineFun={addMedicineFun} />
+                <TableComponent apiData={apiData} deleteMedicine={deleteMedicine} text={"ADD MEDICINE TABLE"} />
+                <Notifications showConfirmation={showRemoveConfirmation} hideConfirmationHandler={hideRemoveConfirmationHandler} data={"Are You Soure to Remove Medicine "} confirmDelete={confirmDelete} />
+
+                <AddREcodeForm showRecordModal={showRecordModal} handleCloseRecordModal={handleCloseRecordModal} apiData={apiData} showConfirmationHandler={showConfirmationHandler} addMedicineFun={addMedicineFun} />
+                <TableComponent apiData={apiRecodeData} showActions={false} text={"ADD RECODE TABLE"} />
+
+                <AddRecodeOut showRecorOutdModal={showRecorOutdModal} handleCloseRecordOutModal={handleCloseRecordOutModal} apiRecodeData={apiRecodeData} addMedicineFun={addMedicineFun} showConfirmationHandler={showConfirmationHandler} />
+                <TableComponent apiData={apiRecodeOutData} showActions={false} text={"ADD RECODE Out TABLE"} />
+                <Notifications showConfirmation={showConfirmation} hideConfirmationHandler={hideConfirmationHandler} data={"this Medicine not avalible in Store"} />
+            </div>
         </div>
     )
 }

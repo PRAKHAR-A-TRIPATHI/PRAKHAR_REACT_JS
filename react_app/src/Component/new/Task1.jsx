@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom';
 export default function Task1({ btnArray }) {
   const [clickBtn, setclickBtn] = useState([]);
   const { id } = useParams();
-  const numButtons = Number(id);
-
+  let numButtons = Number(id);
+ if(!id){
+  numButtons=8;
+ }
   const handleButtonClick = (val) => {
     if (clickBtn.includes(val)) {
       setclickBtn(clickBtn.filter((btn) => btn !== val));

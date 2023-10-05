@@ -2,7 +2,7 @@ import './App.css'
 // import Main from './forms/mAIN.JSX'
 import Count from './useState/Count'
 // import Bg from './bg -change/Bg'
-// import Password from './passwordGenerate/Password'
+import Password from './passwordGenerate/Password'
 import Example from './useState/Example'
 // import Main from './MEDICINE/Main'
 // import Solution1 from './example/Solution1'
@@ -15,6 +15,9 @@ import UseRef from './useRef/UseRef'
 import UnctrollForm from './useRef/UnctrollForm'
 import RoutingMain from './routing/RoutingMain'
 import ContexMain from './useContext/ContexMain'
+import UseCallback from './callback/useCallback'
+import UseMemoMain from './useMemo/useMemoMain'
+import ReducerMain from './useReducer/ReducerMain'
 
 
 
@@ -36,6 +39,9 @@ function App() {
       {/* <UnctrollForm/> */}
       {/* <RoutingMain/> */}
       {/* <ContexMain/> */}
+      {/* <UseCallback/> */}
+      {/* <UseMemoMain/> */}
+      <ReducerMain/>
     </>
   )
 }

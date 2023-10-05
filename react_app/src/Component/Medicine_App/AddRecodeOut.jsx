@@ -14,7 +14,7 @@ export default function AddRecodeOut({showRecorOutdModal,handleCloseRecordOutMod
         setFormData({ ...formData, [name]: value });
     };
     const medicineCheak = () => {
-        return apiRecodeData.some((val) => val.medicine.trim() === formData.medicine.trim());
+        return apiRecodeData.some((val) => val.medicine.toLowerCase().trim() === formData.medicine.toLowerCase().trim());
     };
 
 

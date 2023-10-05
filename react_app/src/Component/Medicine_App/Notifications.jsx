@@ -6,8 +6,8 @@ export default function Notifications({showConfirmation,hideConfirmationHandler,
     
    
     const handleConfirmation = () => {
-        confirmDelete()
         hideConfirmationHandler();
+        confirmDelete()
       };
     
     return (

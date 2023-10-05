@@ -15,7 +15,7 @@ export default function AddREcodeForm({ showRecordModal, handleCloseRecordModal,
         setFormData({ ...formData, [name]: value });
     };
     const medicineCheak = () => {
-        return apiData.some((val) => val.medicine.trim() === formData.medicine.trim());
+        return apiData.some((val) => val.medicine.toLowerCase().trim() === formData.medicine.toLowerCase().trim());
     };
 
 

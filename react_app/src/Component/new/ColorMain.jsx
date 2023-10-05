@@ -27,11 +27,9 @@ export default function ColorMain() {
                     <Route
                         path="/task1/:id" 
                         element={<Task1 btnArray={btnArray} />} />
-
                     <Route
                         path='task2'
                         element={<Task2 btnArray={btnArray} />} />
-
                     <Route
                         path='task3'
                         element={<Task3 btnArray={btnArray} />} />

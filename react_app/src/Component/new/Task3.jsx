@@ -2,27 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Task3({ btnArray }) {
-    const [clickBtn, setclickBtn] = useState([]);
+    const [clickBtn, setClickBtn] = useState([]);
 
     const handleButtonClick = (val) => {
-        if (clickBtn.length <= 2) {
-            if (clickBtn.includes(val)) {
-                setclickBtn(clickBtn.filter((btn) => btn !== val));
-            } else {
-                setclickBtn([...clickBtn, val]);
-            }
-            // console.log(clickBtn)
+        // console.log(clickBtn.length)
+
+        if (clickBtn.includes(val)) {
+            setClickBtn(clickBtn.filter((btn) => btn !== val));
         } else {
-            if (clickBtn.includes(val)) {
-                setclickBtn(clickBtn.filter((btn) => btn !== val));
+            if (clickBtn.length > 2) {
+                setClickBtn(clickBtn.shift())
             }
-            // console.log(clickBtn)
+            setClickBtn([...clickBtn, val]);  
         }
-        // if (clickBtn.includes(val)) {
-        //     setclickBtn(clickBtn.filter((btn) => btn !== val));
-        // } else {
-        //     setclickBtn([...clickBtn, val]);
-        // }
     };
 
     return (

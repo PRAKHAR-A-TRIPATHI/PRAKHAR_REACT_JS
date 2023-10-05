@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CompA from './CompA'
 
 function ContexMain() {
     return (
         <div>
-            <CompA /> 
+            <CompA />   
         </div>
     )
 }

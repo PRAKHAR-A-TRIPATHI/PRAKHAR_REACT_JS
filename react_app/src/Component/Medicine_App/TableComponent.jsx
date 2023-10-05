@@ -37,7 +37,10 @@ export default function TableComponent({ apiData, deleteMedicine, showActions = 
                   <td>{medicine.batchNum}</td>
                   <td>{medicine.expireDate}</td>
                   <td>
-                    <button className='btn bg-success text-white m-1'>Update</button>
+                    <button className='btn bg-success text-white m-1'
+                    onClick={()=>{
+                      
+                    }}>Update</button>
                     <button className='btn bg-danger text-white' onClick={() => deleteMedicine(medicine.id)}>Remove</button>
                   </td>
                 </>

@@ -6,7 +6,16 @@
       "author": "typicode"
     }
   ],
-  "Medicine": [],
+  "Medicine": [
+    {
+      "medicine": "dolo",
+      "batchNum": "A5",
+      "quntity": "45",
+      "rack": "5",
+      "expireDate": "2023-10-28",
+      "id": 1
+    }
+  ],
   "AddMedicineRecode": [
     {
       "medicine": "dolo",
