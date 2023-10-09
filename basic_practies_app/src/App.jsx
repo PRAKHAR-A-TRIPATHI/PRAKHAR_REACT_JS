@@ -18,6 +18,8 @@ import ContexMain from './useContext/ContexMain'
 import UseCallback from './callback/useCallback'
 import UseMemoMain from './useMemo/useMemoMain'
 import ReducerMain from './useReducer/ReducerMain'
+import FormikMain from './formik/FormikMain'
+import CrudeMain from './Crude/CrudeMain'
 
 
 
@@ -41,7 +43,9 @@ function App() {
       {/* <ContexMain/> */}
       {/* <UseCallback/> */}
       {/* <UseMemoMain/> */}
-      <ReducerMain/>
+      {/* <ReducerMain/> */}
+      {/* <FormikMain/> */}
+      <CrudeMain/>
     </>
   )
 }
