@@ -6,7 +6,7 @@ export default function Notification({ show, confirmDelete, setIsDeleteConfirmat
       <button className="absolute top-6  right-4 text-gray-600" onClick={() => {
         setIsDeleteConfirmationOpen(false)
       }}><i className="fa-solid fa-xmark fa-2xl"></i></button>
-      <h2 className="text-2xl font-semibold mb-6">Are You Soure {work} {rowDataToDelete} Row</h2>
+      <h2 className="text-2xl font-semibold mb-6">Are You Soure Delete Row</h2>
       <button className="rounded-lg bg-green-600 p-2 m-2 text-white"
         onClick={
           () => {

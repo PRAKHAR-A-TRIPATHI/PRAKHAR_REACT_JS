@@ -5,6 +5,8 @@ import Home from './Home'
 import About from './About'
 import Content from './Content'
 import User from './User'
+import Longin from './Longin'
+import ProtectRout from './ProtectRout'
 // const router = createBrowserRouter([
 //     {
 //         path:'/',
@@ -29,9 +31,11 @@ import User from './User'
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path='/' element={<Rout/>}>
-            <Route path='' element={<Home/>} />
-            <Route path='about' element={<About/>} />
-            <Route path='contact' element={<Content/>} />
+            {/* <Route path='' element={<Home/>} /> */}
+            <Route path='' element={<ProtectRout Component={Home}/>} />
+            <Route path='/login' element={<Longin/>} />
+            <Route path='/about' element={<ProtectRout Component={About}/>} />
+            <Route path='/contact' element={<ProtectRout Component={Content}/>} />
             <Route path='user/:userid' element={<User/>} />
             <Route path='user' element={<User/>} />
         </Route>

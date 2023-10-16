@@ -1,0 +1,132 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "FirstName": "Prakhar Kumar",
+      "Lastname": "Tripathi",
+      "Number": 1234567,
+      "Email": "prakhae@gmail.com",
+      "id": 1
+    },
+    {
+      "FirstName": "vishal",
+      "Lastname": "kumar",
+      "Number": "345653765",
+      "Email": "vishal@gmail.com",
+      "id": 2
+    },
+    {
+      "FirstName": "pujan",
+      "Lastname": "jani",
+      "Number": "345653765",
+      "Email": "pujan@gmail.com",
+      "id": 3
+    },
+    {
+      "FirstName": "Mayur",
+      "Lastname": "Thakor",
+      "Number": "345653765",
+      "Email": "Mayur@gmail.com",
+      "id": 4
+    },
+    {
+      "FirstName": "vansh",
+      "Lastname": "panchal",
+      "Number": "34653737",
+      "Email": "vishal@gmail.com",
+      "id": 6
+    },
+    {
+      "FirstName": "bhmuik ",
+      "Lastname": "panchal",
+      "Number": "465474576",
+      "Email": "bhaumik@gmail.com",
+      "id": 7
+    },
+    {
+      "FirstName": "pujan",
+      "Lastname": "jani",
+      "Number": "324876",
+      "Email": "pujan@gmail.com",
+      "id": 8
+    },
+    {
+      "FirstName": "rudra",
+      "Lastname": "Solanki",
+      "Number": "36547454775",
+      "Email": "Rudra@gmail.com",
+      "id": 9
+    },
+    {
+      "FirstName": "Prakhar ",
+      "Lastname": "Tripathi",
+      "Number": "36547654",
+      "Email": "pujan@gmail.com",
+      "id": 10
+    }
+  ],
+  "task2": [
+    {
+      "Number": "8849702479",
+      "Name": "Prakhar",
+      "Password": "Prakha!23",
+      "Date": "2004-10-27",
+      "ConfirmPasswords": "Prakha!23",
+      "id": 1
+    },
+    {
+      "Number": "7968709499",
+      "Name": "Pujan",
+      "Password": "Pefefe4@@",
+      "Date": "2023-10-29",
+      "ConfirmPasswords": "Pefefe4@@",
+      "id": 2
+    },
+    {
+      "Number": "9974138505",
+      "Name": "Arman",
+      "Password": "Aman@12",
+      "Date": "1021-10-14",
+      "ConfirmPasswords": "Aman@12",
+      "id": 3
+    },
+    {
+      "Number": "1234567890",
+      "Name": "Sachin",
+      "Password": "Sachin@123",
+      "Date": "2023-10-14",
+      "ConfirmPasswords": "Sachin@123",
+      "id": 4
+    },
+    {
+      "Number": "4354354354",
+      "Name": "Bhaumik",
+      "Password": "Bh@123",
+      "Date": "2005-01-02",
+      "ConfirmPasswords": "Bh@123",
+      "id": 5
+    },
+    {
+      "Number": "8849702479",
+      "Name": "Prakhar vKumar",
+      "Password": "Phbb&77",
+      "Date": "2000-10-22",
+      "ConfirmPasswords": "Phbb&77",
+      "id": 6
+    },
+    {
+      "Number": "9662406707",
+      "Name": "Niraj Patel",
+      "Password": "Niraj$123",
+      "Date": "2004-12-02",
+      "ConfirmPasswords": "Niraj$123",
+      "id": 7
+    }
+  ]
+}

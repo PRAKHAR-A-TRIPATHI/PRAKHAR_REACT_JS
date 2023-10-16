@@ -34,7 +34,7 @@ function Home({ apiData,apiDeleteFun,UpdateUserData,setUpdateButton }) {
       useEffect(()=>{
        let a = setTimeout(()=>{
             handleSearch()
-        },500)
+        },300)
         return()=> clearTimeout(a);
       },[searchIterm])
 
@@ -56,7 +56,7 @@ function Home({ apiData,apiDeleteFun,UpdateUserData,setUpdateButton }) {
                     </Link>
                 </div>
             </header>
-            <Table ArrayItem={apiSerch} apiDeleteFun={apiDeleteFun} UpdateUserData={UpdateUserData} setUpdateButton={setUpdateButton}/>
+            <Table    />
         </div>
     );
 }

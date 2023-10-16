@@ -36,6 +36,7 @@ function Table({ ArrayItem, apiDeleteFun, UpdateUserData, setUpdateButton }) {
                                             UpdateUserData(val)
                                             setUpdateButton(true);
                                             navigate("AddUsers")
+                                            // navigate(`/AddUsers/${val.id}`)
                                         }}>update</button>
                                 </td>
                             </tr>

@@ -5,7 +5,7 @@ import { comBContext } from './ComB';
 export default function ComD() {
     let aData = useContext(data);
     let comb  = useContext(comBContext)
-
+    console.log(comBData)
   return (
     <div>
       <h1>Comp D</h1>

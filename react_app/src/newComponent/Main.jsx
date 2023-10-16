@@ -26,7 +26,7 @@ function Main() {
         })
             .then(() => { })
             .catch((error) => console.log(error))
-        apiDataFetchFun()
+        apiDataFetchFun()   
     }
     const addUserFun = (data) => {
         fetch("http://localhost:3000/users", {
@@ -73,6 +73,9 @@ function Main() {
                     <Route
                         path="/"
                         element={<Home apiData={apiData} apiDeleteFun={apiDeleteFun} UpdateUserData={UpdateUserData} setUpdateButton={setUpdateButton} />} />
+                    <Route
+                        path="AddUsers/:id"
+                        element={<AddUser />} />
                     <Route
                         path="AddUsers"
                         element={<AddUser addUserFun={addUserFun} selectedUser={selectedUser} updateButton={updateButton} updateUser={updateUser} />} />

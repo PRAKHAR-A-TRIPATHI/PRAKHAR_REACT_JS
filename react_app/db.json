@@ -42,7 +42,7 @@
       "id": 1
     },
     {
-      "FirstName": "shlok",
+      "FirstName": "s",
       "LastName": "Tripathi",
       "Email": "shlok@gmail.com",
       "number": 123456789,
@@ -90,52 +90,12 @@
       "id": 7
     },
     {
-      "FirstName": "Mayur",
-      "LastName": "thakor",
-      "Email": "mayur@gmail.com",
-      "number": 123456789,
-      "Passwords": "mae5",
-      "id": 8
-    },
-    {
-      "FirstName": "vansh",
+      "FirstName": "vansh Kumar",
       "LastName": "panchal",
       "Email": "vansh@gmail.com",
       "number": 123456789,
       "Passwords": "vxfxwer",
       "id": 9
-    },
-    {
-      "FirstName": "Arman",
-      "LastName": "Ali",
-      "Email": "arman@gmail.com",
-      "number": 123456789,
-      "Passwords": "Art4egv",
-      "id": 10
-    },
-    {
-      "FirstName": "cfjvbkfdyu",
-      "LastName": "6tykk",
-      "id": 11,
-      "Email": "sfdchhf@gami.com",
-      "number": 123456789,
-      "Passwords": "sdg45"
-    },
-    {
-      "FirstName": "sdgergshdfyi",
-      "LastName": "tripathi",
-      "Email": "prakahr@gmail.com",
-      "number": "35654675",
-      "Passwords": "dsgegb",
-      "id": 12
-    },
-    {
-      "FirstName": "dghryj",
-      "LastName": "tripathi",
-      "Email": "prakahszfcsdzxvr@gmail.com",
-      "number": "232535645",
-      "Passwords": "30",
-      "id": 13
     }
   ]
 }

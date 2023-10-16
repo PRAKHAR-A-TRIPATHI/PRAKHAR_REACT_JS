@@ -39,13 +39,13 @@ function App() {
       {/* <Count/> */}
       {/* <UseRef/> */}
       {/* <UnctrollForm/> */}
-      {/* <RoutingMain/> */}
+      <RoutingMain/>
       {/* <ContexMain/> */}
       {/* <UseCallback/> */}
       {/* <UseMemoMain/> */}
       {/* <ReducerMain/> */}
       {/* <FormikMain/> */}
-      <CrudeMain/>
+      {/* <CrudeMain/> */}
     </>
   )
 }

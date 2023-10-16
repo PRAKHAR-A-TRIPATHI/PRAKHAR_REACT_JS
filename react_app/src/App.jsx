@@ -1,8 +1,9 @@
 import './App.css'
 import MainCrude from './Component/Crude/MainCrude';
-// import Main from './Component/Medicine_App/Main';
+// import Main from './Component/Medicine_App/Main';  
 import ColorMain from './Component/new/ColorMain';
 import Main from './newComponent/Main';
+import MainComp from './newCrude/MainComp';
 
 
 
@@ -13,7 +14,8 @@ function App() {
       {/* <Main/> */}
       {/* <ColorMain/> */}
       {/* <MainCrude/> */}
-     <Main/>
+     {/* <Main/> */}
+     <MainComp/>
     </div>
     </>
   )
