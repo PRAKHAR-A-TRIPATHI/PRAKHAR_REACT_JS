@@ -49,5 +49,4 @@ function TableNew({data,setId,setShow}) {
         </div>
     )
 }
-
 export default TableNew

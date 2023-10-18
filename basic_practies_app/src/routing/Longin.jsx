@@ -8,9 +8,7 @@ function Longin() {
         tel: '',
         file:""
     })
-   console.log(data)
     const login = () => {
-        // localStorage.setItem('login', true)
         localStorage.setItem("use-info",JSON.stringify(data))
     }
     const navigate = useNavigate()
@@ -28,7 +26,7 @@ function Longin() {
         <div>
             <form className="p-6 flex flex-col justify-center" onSubmit={login}>
                 <div className="flex flex-col">
-                    <label for="name" className="hidden">
+                    <label htmlFor="name" className="hidden">
                         Full Name
                     </label>
                     <input

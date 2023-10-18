@@ -10,6 +10,7 @@ function Home() {
     const [data, setData] = useState([])
     const [id, setId] = useState(null)
     const [show, setShow] = useState(false);
+    const [stopApi, setStopApi] = useState(true)
     useEffect(() => {
         fetchFun()
     }, [])
@@ -25,27 +26,34 @@ function Home() {
     }
     // console.log(data)
     const handleDelet = () => {
-        fetch(`http://localhost:3001/task2/${id}`, {
-            method: 'DELETE',
-        })
-            .then((response) => response.json())
-            .then(() => {
-                setShow(false)
-                toast.warn('Delete Sussefully !', {
-                    position: "top-center",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                });
+        if (stopApi) {
+            fetch(`http://localhost:3001/task2/${id}`, {
+                method: 'DELETE',
             })
-            .catch((error) => {
-                console.error('Error deleting user:', error);
-            });
-        fetchFun()
+                .then((response) => response.json())
+                .then(() => {
+                    setShow(false)
+
+                    toast.warn('Delete Sussefully !', {
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                    });
+                    setStopApi(true)
+                })
+                .catch((error) => {
+                    console.error('Error deleting user:', error);
+                });
+            setStopApi(false)
+            fetchFun()
+        }
+
+
     }
     return (
         <div>

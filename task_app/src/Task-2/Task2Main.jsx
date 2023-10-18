@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function Task2Main() {
     return (
         <div>
+            <ToastContainer />
             <BrowserRouter>
-                <ToastContainer />
                 <Routes>
                     <Route
                         path="/"

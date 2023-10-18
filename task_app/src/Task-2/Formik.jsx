@@ -11,6 +11,7 @@ function Formiks() {
     const { id } = useParams()
     const [pass, setPass] = useState(true)
     const [cpass, setCPass] = useState(true)
+    const [stopApi, setStopApi] = useState(true)
     const [formData, setFormData] = useState({
         Number: '',
         Name: '',
@@ -34,7 +35,6 @@ function Formiks() {
 
     const handleUsers = (values) => {
         const url = id ? `http://localhost:3001/task2/${id}` : 'http://localhost:3001/task2';
-
         fetch(url, {
             method: id ? 'PUT' : 'POST',
             headers: {
@@ -52,6 +52,7 @@ function Formiks() {
                 }
                 toast.success(`${id ? "update Sussefully" : "Add Sussefull"}`)
                 navigate('/')
+                setStopApi(true)
                 return response.json();
 
             })
@@ -61,7 +62,7 @@ function Formiks() {
     }
     return (
         <div>
-         
+
             <div className={'max-w-md mx-auto w-full  bg-white absolute left-1/3  p-6 rounded-md shadow-md '}>
                 <h2 className="text-2xl font-semibold mb-6">Form</h2>
                 <Formik
@@ -69,9 +70,12 @@ function Formiks() {
                     initialValues={formData}
                     validationSchema={signUpSchema}
                     onSubmit={(values) => {
-                        handleUsers(values)
+                        if (stopApi) {
+                            handleUsers(values);
+                            setStopApi(false)
+                        }
                     }}>
-                    
+
                     {(formik) => (
                         <form onSubmit={formik.handleSubmit}>
                             <Input formik={formik} name="Number" type="text" id={id} />
@@ -87,7 +91,6 @@ function Formiks() {
                                     {id ? " Update Data " : "Submit"}
                                 </button>
                                 <button
-                                    type="submit"
                                     className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                                     onClick={(e) => {
                                         e.preventDefault();

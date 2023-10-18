@@ -73,14 +73,6 @@
   ],
   "task2": [
     {
-      "Number": "8849702479",
-      "Name": "Prakhar",
-      "Password": "Prakha!23",
-      "Date": "2004-10-27",
-      "ConfirmPasswords": "Prakha!23",
-      "id": 1
-    },
-    {
       "Number": "7968709499",
       "Name": "Pujan",
       "Password": "Pefefe4@@",
@@ -121,12 +113,20 @@
       "id": 6
     },
     {
-      "Number": "9662406707",
-      "Name": "Niraj Patel",
-      "Password": "Niraj$123",
-      "Date": "2004-12-02",
-      "ConfirmPasswords": "Niraj$123",
+      "Number": "9974138505",
+      "Name": "Alok ",
+      "Password": "AL$123",
+      "Date": "2000-10-19",
+      "ConfirmPasswords": "AL$123",
       "id": 7
+    },
+    {
+      "Number": "8849702479",
+      "Name": "Prakhar Kumar",
+      "Password": "Prak$123",
+      "Date": "0020-02-02",
+      "ConfirmPasswords": "Prak$123",
+      "id": 8
     }
   ]
 }
