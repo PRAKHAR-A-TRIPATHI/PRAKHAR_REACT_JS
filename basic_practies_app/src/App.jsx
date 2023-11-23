@@ -4,13 +4,13 @@ import Count from './useState/Count'
 // import Bg from './bg -change/Bg'
 import Password from './passwordGenerate/Password'
 import Example from './useState/Example'
-// import Main from './MEDICINE/Main'
-// import Solution1 from './example/Solution1'
+import Main from './MEDICINE/Main'
+import Solution1 from './example/Solution1'
 // import ControlledForm from './forms/Controlled Components'
-// import DataForm from './forms/DataForm'
-// import DataTable from './forms/DataTable'
-// import JsonFile from './example/JsonFile'
-import Main from './forms/Main'
+import DataForm from './forms/DataForm'
+import DataTable from './forms/DataTable'
+import JsonFile from './example/JsonFile'
+// import Main from './forms/Main'
 import UseRef from './useRef/UseRef'
 import UnctrollForm from './useRef/UnctrollForm'
 import RoutingMain from './routing/RoutingMain'
@@ -20,6 +20,8 @@ import UseMemoMain from './useMemo/useMemoMain'
 import ReducerMain from './useReducer/ReducerMain'
 import FormikMain from './formik/FormikMain'
 import CrudeMain from './Crude/CrudeMain'
+import Timer from './timer/Timer'
+import ReduxMain from './redux/ReduxMain'
 
 
 
@@ -35,17 +37,19 @@ function App() {
       {/* <Solution1/> */}
       {/* <ControlledForm/> */}
       {/* <JsonFile/> */}
-      {/* <Main /> */}
+      <Main />
       {/* <Count/> */}
       {/* <UseRef/> */}
       {/* <UnctrollForm/> */}
-      <RoutingMain/>
+      {/* <RoutingMain/> */}
       {/* <ContexMain/> */}
       {/* <UseCallback/> */}
       {/* <UseMemoMain/> */}
       {/* <ReducerMain/> */}
       {/* <FormikMain/> */}
       {/* <CrudeMain/> */}
+      {/* <Timer/> */}
+      {/* <ReduxMain/> */}
     </>
   )
 }

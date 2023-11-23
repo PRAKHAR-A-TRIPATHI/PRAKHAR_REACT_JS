@@ -7,6 +7,7 @@ import Content from './Content'
 import User from './User'
 import Longin from './Longin'
 import ProtectRout from './ProtectRout'
+import Cart from './Cart'
 // const router = createBrowserRouter([
 //     {
 //         path:'/',
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
             <Route path='/contact' element={<ProtectRout Component={Content}/>} />
             <Route path='user/:userid' element={<User/>} />
             <Route path='user' element={<User/>} />
+            <Route path='cart' element={<Cart/>} />
         </Route>
     )
 )

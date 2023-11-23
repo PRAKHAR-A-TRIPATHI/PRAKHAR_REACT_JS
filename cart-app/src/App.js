@@ -7,8 +7,8 @@ function App() {
   
   return (
     <>
-      {/* <Main/> */}
-      <RoutinMain/>
+      <Main/>
+      {/* <RoutinMain/> */}
     </>
   );
 }

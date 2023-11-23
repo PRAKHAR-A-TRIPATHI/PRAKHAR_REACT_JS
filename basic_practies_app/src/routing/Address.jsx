@@ -27,7 +27,7 @@ function Address({ isAddressForm, setIsAddressForm }) {
         const storedData = JSON.parse(localStorage.getItem('use-info'));
         const newData = { ...storedData, ...formData };
         const newDataString = JSON.stringify(newData);
-        localStorage.setItem('use-info', newDataString);
+        localStorage.setItem('use-info', newDataString);        
     };
 
     const handleSubmit = (e) => {
