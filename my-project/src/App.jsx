@@ -5,15 +5,7 @@ import _ from 'lodash';
 import { FaSun, FaMoon, FaCoffee } from 'react-icons/fa';
 
 
-function iconsFun(time) {
-  if (time >= '06:00 am' && time < '12:00 am') {
-    return <FaSun />;
-  } else if (time >= '12:00 pm' && time < '6:00 pm') {
-    return <FaCoffee />;
-  } else {
-    return <FaMoon />;
-  }
-}
+
 
 function App() {
   const sameDateData = _.groupBy(medicineData, 'created_at');
@@ -59,7 +51,6 @@ function App() {
                     )
                   }
                 </div>
-                {iconsFun(slotTime)}
                 <p className='text-2xl font-bold'>{slotTime}</p>
               </div>
             ))}
