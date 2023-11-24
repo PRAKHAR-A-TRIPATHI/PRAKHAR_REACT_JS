@@ -47,7 +47,7 @@ export const medicineData = [
     {
         "prescription_id": 1579130,
         "remarks": "",
-        "id": 28833,
+        "id": 2883,
         "medicine_taken": false,
         "created_at": "2023-11-24T18:30:00.000Z",
         "slot_time": "07:55 am",
