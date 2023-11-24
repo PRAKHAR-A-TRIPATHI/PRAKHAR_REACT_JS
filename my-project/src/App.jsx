@@ -16,12 +16,12 @@ function icons(slotTime) {
 
   if (time[1] === "am") {
     if (hour >= 6 && hour < 12) {
-      return <FaSun />;
+      return <FaSun className='text-orange-500 text-2xl'/>;
     }
   }
   if (time[1] === "pm") {
     if (hour >= 6 && hour < 12) {
-      return <FaMoon />;
+      return <FaMoon className='text-gray-500 text-2xl' />;
     } else {
       return <FaCloudSun />
     }
@@ -82,17 +82,20 @@ function App() {
         <div>
           <div>
             {data.map(([slotTime, slotItems]) => (
-              <div key={slotTime} className='flex justify-between border-2 border-blue-500 m-2 p-2'>
+              <div key={slotTime} className='flex justify-between border-2 border-blue-500 m-2 p-2 rounded-md bg-blue-200'>
                 <div>
+                  <span className='text-center flex p-2'>
+                  {icons(slotTime)}
+                  </span>
                   {
                     slotItems.map((item) =>
                       <div key={item.id} >
-                        <p >{item.medicine_name}</p>
+                        <p className='text-xl ' >{item.medicine_name}</p>
                       </div>
                     )
                   }
                 </div>
-                <p className='text-2xl font-bold'>{icons(slotTime)} {slotTime}</p>
+                <p className='text-2xl font-bold text-blue-500'> {slotTime}</p>
               </div>
             ))}
           </div>
