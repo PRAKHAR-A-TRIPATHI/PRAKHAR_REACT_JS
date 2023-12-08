@@ -7,6 +7,7 @@ import utc from 'dayjs/plugin/utc';
 
 dayjs.extend(utc);
 
+
 function icons(slotTime) {
   let timeA = slotTime.split(":");
 
@@ -15,7 +16,7 @@ function icons(slotTime) {
 
   if (time[1] === "am") {
     if (hour >= 6 && hour < 12) {
-      return <FaSun className='text-orange-500 text-2xl' />;
+      return <FaSun className='text-orange-500 text-2xl'/>;
     }
   }
   if (time[1] === "pm") {
@@ -81,15 +82,15 @@ function App() {
         <div>
           <div>
             {data.map(([slotTime, slotItems]) => (
-              <div key={slotTime} className='flex justify-between border-2 border-blue-500 m-2 p-2 rounded-md bg-blue-200'>
+              <div key={slotTime} className='flex justify-between border-2 border-blue-500 m-2 p-2 rounded-md'>
                 <div>
                   <span className='text-center flex p-2'>
-                    {icons(slotTime)}
+                  {icons(slotTime)}
                   </span>
                   {
                     slotItems.map((item) =>
                       <div key={item.id} >
-                        <p className='text-xl ' >{item.dosage}×{item.medicine_name}</p>
+                        <p >{item.medicine_name}</p>
                       </div>
                     )
                   }
