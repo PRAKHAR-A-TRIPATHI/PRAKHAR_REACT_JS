@@ -66,6 +66,7 @@ box-sizing: border-box;
 border: 1px solid #ccc;
 border-radius: 4px;
 margin-bottom: 10px;
+position: relative;
 `;
 export const Label = styled.label`
 display: block;
@@ -74,7 +75,7 @@ display: block;
 `;
 export const Toggle = styled.span`
 display: block;
- position: fixed;
-  right: 40%;
-  top:55%;
+ position: absolute;
+  right: 39%;
+  top:50%;
 `;
