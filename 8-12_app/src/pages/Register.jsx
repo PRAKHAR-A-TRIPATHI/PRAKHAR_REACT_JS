@@ -1,12 +1,12 @@
 import React, { createRef, useRef, useState } from 'react'
-import { Button, Container, Div, Form, H1, Input, Label, OtpInput, P, Span, Toggle } from '../style_component/Style'
+import { Button, Container, Div, Form, H1,  OtpInput, P, Span, Toggle } from '../style_component/Style'
 import { useParams, useNavigate } from 'react-router-dom'
 import { intialArray, validOtp, validPassword } from '../service/data';
 
 
 function Register() {
     const [otpArray, setOtpArray] = useState(intialArray);
-    const inputRefs = useRef([...intialArray].map(() => createRef()));
+    const inputRefs = useRef([...intialArray].map(() => createRef()));   
     const [otp, setOtp] = useState("");
     const { number } = useParams();
     const navigate = useNavigate()
@@ -33,7 +33,7 @@ function Register() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if ( otp.trim()) {
-                validOtp == otp ? alert("login Sussesfully") : alert("not valid password");
+                validOtp == otp ? alert("Register  Sussesfully") : alert("not valid password");
         } else {
             alert("Please enter password")
         }

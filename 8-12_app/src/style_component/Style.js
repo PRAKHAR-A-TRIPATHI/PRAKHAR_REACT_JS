@@ -78,6 +78,3 @@ display: block;
   right: 40%;
   top:55%;
 `;
-
-
-
