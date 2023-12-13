@@ -7,13 +7,13 @@ export const Container = styled.div`
   height: 100%;
   width:100%;
 `;
-export const HeadingTag = styled.h1`
+export const H1 = styled.h1`
  padding: 5px 0px;
 `;
-export const MobileDiv = styled.span`
+export const Span = styled.span`
 padding: 5px 0px;
 `;
-export const FlexDiv = styled.div`
+export const Div = styled.div`
  padding: 5px;
  display: inline-flex;
  justify-content: space-between;
@@ -24,24 +24,7 @@ export const PasswordInputDiv = styled.div`
  width: 100%;
  position: relative;
 `;
-export const Text = styled.p`
- padding: 5px 0px;
- font-weight: bold;
- color: ${(({ color }) => color)};
- 
-`;
-export const Changebutton = styled.button`
-border:none;
-background-color:white;
- padding: 5px 0px;
- font-weight: bold;
- color: ${(({ color }) => color)};
- 
-`;
-export const ToggleButton = styled.div`
-cursor: context-menu;
-border:none;
-background-color:white;
+export const P = styled.p`
  padding: 5px 0px;
  font-weight: bold;
  color: ${(({ color }) => color)};

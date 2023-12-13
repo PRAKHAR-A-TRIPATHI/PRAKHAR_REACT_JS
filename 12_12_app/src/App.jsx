@@ -1,27 +1,24 @@
 import React from 'react'
-import { Global } from './style_component/Global'
-import Home from './pages/Home'
-import Register from './pages/Register'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ContextApi  from './services/ContextApi'
+import { Global } from './style_component/Gloabal'
 import Login from './pages/Login'
-import Context from './component/Context'
+import Register from './pages/Register'
 
-const App = () => {
-
+function App() {
   return (
     <>
       <Global />
-      <Context>
+      <ContextApi>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Login/>} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
         </BrowserRouter>
-      </Context>
+      </ContextApi>
     </>
-
   )
 }
 

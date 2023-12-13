@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Button, Container, FlexDiv, Form, HeadingTag, Input, Label } from '../style_component/Style';
+import { Button, Container, Div, Form, H1, Input, Label, P } from '../style_component/Style';
 import { useFormik } from 'formik';
 import { initialValues, mobileNum } from '../service/data';
 import { LoginSchema } from '../service/Validation';
@@ -28,13 +28,13 @@ function Home() {
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                <FlexDiv>
-                    <HeadingTag>Welcome</HeadingTag>
-                </FlexDiv>
+                <Div>
+                    <H1>Welcome</H1>
+                </Div>
                 <MobileInput value={values.number} handleChange={handleChange} errors={errors} touched={touched} />
-                <FlexDiv>
+                <Div>
                     <Button type='submit'>NEXT</Button>
-                </FlexDiv>
+                </Div>
             </Form>
 
         </Container>

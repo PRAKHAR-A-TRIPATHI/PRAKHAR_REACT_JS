@@ -1,8 +1,8 @@
 import React, { createRef, useRef, useState } from 'react'
-import { intialArray } from '../service/data';
-import { FlexDiv, OtpInput } from '../style_component/Style';
+import { Errors, FlexDiv, InputLabel, OtpInput, Text } from '../style_component/Style';
+import { intialArray } from '../services/data';
 
-function OtpInputs({ setOtp }) {
+function OtpInputs({ setOtp,errors }) {
     const [otpArray, setOtpArray] = useState(intialArray);
     const inputRefs = useRef([...intialArray].map(() => createRef()));
     const handleInputChange = (index, value) => {
@@ -23,6 +23,10 @@ function OtpInputs({ setOtp }) {
         }
     };
     return (
+        <>
+       <FlexDiv>
+          <InputLabel>Enter OTP to verify</InputLabel> :
+        </FlexDiv>
         <FlexDiv>
             {otpArray.map((value, index) => (
                 <OtpInput key={index}
@@ -34,6 +38,8 @@ function OtpInputs({ setOtp }) {
                 />
             ))}
         </FlexDiv>
+        <Errors>{errors&&errors.otp}</Errors>
+        </>
     )
 }
 

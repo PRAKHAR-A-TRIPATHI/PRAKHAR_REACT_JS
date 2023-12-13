@@ -1,6 +1,6 @@
 import React, { createRef, useRef, useState } from 'react'
 import { intialArray } from '../service/data';
-import { FlexDiv, OtpInput } from '../style_component/Style';
+import { Div, OtpInput } from '../style_component/Style';
 
 function OtpInputs({ setOtp }) {
     const [otpArray, setOtpArray] = useState(intialArray);
@@ -23,7 +23,7 @@ function OtpInputs({ setOtp }) {
         }
     };
     return (
-        <FlexDiv>
+        <Div>
             {otpArray.map((value, index) => (
                 <OtpInput key={index}
                     ref={inputRefs.current[index]}
@@ -33,7 +33,7 @@ function OtpInputs({ setOtp }) {
                     onKeyDown={(e) => handleKeyDown(index, e)}
                 />
             ))}
-        </FlexDiv>
+        </Div>
     )
 }
 

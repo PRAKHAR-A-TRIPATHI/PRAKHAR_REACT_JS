@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Button, Changebutton, Container, FlexDiv, Form, Input, Label, OtpInput, Text, Toggle, ToggleButton } from '../style_component/Style'
+import { Button, Container, Div, Form, H1, Input, Label, OtpInput, P, Span, Toggle } from '../style_component/Style'
 import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
-import { initialValues, validOtp, validPassword } from '../service/data';
+import { initialValues, mobileNum, validOtp, validPassword } from '../service/data';
+import { LoginSchema } from '../service/Validation';
 import OtpInputs from '../component/OtpInputs';
 import { DataContext } from '../component/Context';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import PasswordInput from '../component/PasswordInput';
-import Heading from '../component/Heading';
 
 function Login() {
     const [opration, setOpration] = useState(false);
@@ -17,7 +17,6 @@ function Login() {
     const navigate = useNavigate()
     const { values, errors, touched, handleChange, handleSubmit, setValues } = useFormik({
         initialValues: initialValues,
-    
         onSubmit: (values) => {
             if (values.password.trim() || otp.trim()) {
                 if (opration) {
@@ -33,33 +32,42 @@ function Login() {
         }
 
     });
-
+    
     useEffect(() => {
         if (!mobileNumber) {
             navigate('/');
         }
     }, [mobileNumber])
-
+  
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                <Heading Heading="Login" mobileNumber={mobileNumber} navigate={navigate} />
-                <FlexDiv>
+                <Div>
+                    <H1>Login</H1>
+                </Div>
+                <Div>
+                    <Span>
+                        <P>Mobile Number</P>
+                        <P color='gray'>{mobileNumber && mobileNumber}</P>
+                    </Span>
+                    <P color="blue" onClick={() => navigate("/")}>Change</P>
+                </Div>
+                <Div>
                     {opration ?
-                        <Text>Enter OTP to verify</Text> :
+                        <P>Enter OTP to verify</P> :
                         <Label>Password</Label>}
 
-                </FlexDiv>
+                </Div>
                 {opration ?
                     <OtpInputs setOtp={setOtp} name="otp" onChange={handleChange(otp)} />
                     :
-                    <PasswordInput values={values} handleChange={handleChange} togglePass={togglePass} setTogglePass={setTogglePass} />
+                    <PasswordInput values={values} handleChange={handleChange} />
                 }
-                <FlexDiv>
-                    <ToggleButton color='blue' onClick={() => setOpration(!opration)}>
+                <Div>
+                    <P color='blue' onClick={() => setOpration(!opration)}>
                         {opration ? "Login Via Password" : "Or Login Via Otp"}
-                    </ToggleButton >
-                </FlexDiv>
+                    </P>
+                </Div>
                 <Button type='submit'>SUBMIT</Button>
             </Form>
 

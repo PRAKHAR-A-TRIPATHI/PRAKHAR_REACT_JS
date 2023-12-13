@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../component/Context';
-import { Button, Container, FlexDiv, Form,  HeadingTag,  MobileDiv,  Text } from '../style_component/Style';
+import { Button, Container, Div, Form, H1, P, Span } from '../style_component/Style';
 import OtpInputs from '../component/OtpInputs';
 import { useNavigate } from 'react-router-dom'
 import { initialValues, validOtp } from '../service/data';
@@ -40,26 +40,26 @@ function Register() {
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                <FlexDiv>HeadingTag
-                    <HeadingTag>Register</HeadingTag>
-                </FlexDiv>
+                <Div>
+                    <H1>Register</H1>
+                </Div>
                 {show ?
                     <MobileInput handleChange={handleChange} value={values.number} errors={errors} touched={touched}/>
                     :
                     <>
-                        <Fle>
-                            <MobileDiv>
-                                <Text>Mobile Number</Text>
-                                <Text color='gray'>{mobileNumber && mobileNumber}</Text>
-                            </MobileDiv>
-                            <Text color="blue" onClick={() => navigate("/")}>Change</Text>
-                        </Fle>
-                        <Fle>
-                            <Text>Enter OTP to verify</Text>
-                        </Fle>
-                        <Fle>
+                        <Div>
+                            <Span>
+                                <P>Mobile Number</P>
+                                <P color='gray'>{mobileNumber && mobileNumber}</P>
+                            </Span>
+                            <P color="blue" onClick={() => navigate("/")}>Change</P>
+                        </Div>
+                        <Div>
+                            <P>Enter OTP to verify</P>
+                        </Div>
+                        <Div>
                             <OtpInputs setOtp={setOtp} />
-                        </Fle>
+                        </Div>
 
                     </>}
                 <Button type='submit'>SUBMIT</Button>
