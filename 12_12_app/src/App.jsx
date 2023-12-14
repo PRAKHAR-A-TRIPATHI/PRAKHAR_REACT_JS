@@ -4,7 +4,7 @@ import ContextApi  from './services/ContextApi'
 import { Global } from './style_component/Gloabal'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import Users from './userroles/Users'
+import Users from './pages/RoleDetails'
 import AddRole from './userroles/AddRole'
 import UpdateRole from './userroles/UpdateRole'
 
@@ -19,9 +19,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/user" element={<Users />} />
-            <Route path="/adduser" element={<AddRole />} />
-            <Route path="/edit" element={<UpdateRole />} />
-            <Route path="/edit/:id" element={<UpdateRole />} />
+            <Route path="/role" element={<AddRole />} />
+            <Route path="/role/:id" element={<UpdateRole />} />
           </Routes>
         </BrowserRouter>
       </ContextApi>

@@ -25,6 +25,8 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   `
 export const Container = styled.div`
 font-family: 'Arial', sans-serif;
+display:flex;
+flex-direction: column;
 width: 100vw;
   `
 export const CheakBoxForm = styled.form`
@@ -35,12 +37,14 @@ export const TableHead = styled.thead`
 padding:1px
   `
 export const Tr = styled.tr`
-padding:1px;
-
-&hover:{
-    background-color: blue;
-}
-  `
+  padding: 1px;
+  &:hover {
+    background-color: lightblue;
+  }
+`;
+export const HeadTr = styled.tr`
+  padding: 1px;
+`;
 export const Th = styled.th`
 border: 1px solid #ddd;
 padding: 12px;
@@ -118,6 +122,11 @@ export const Div = styled.div`
 export const H2 = styled.h2`
  padding:5px;
  margin:2px;
+`
+export const Meassage = styled.h2`
+ padding:5px;
+ margin:2px;
+ text-align:center;
 `
 export const CheakBoxLabel = styled.label`
  padding:5px;

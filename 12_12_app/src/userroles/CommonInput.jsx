@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react'
 import { AddUserButton, ButtonDiv, CancelButton, CheakBoxDiv, CheakBoxForm, CheakBoxLabel, ChekBoxInput, Container, DeleteButton, Div, Errors, H2, Input, InputBox, InputDiv, InputLabel, Options, Select } from '../style_component/productStyle'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
-import { Data } from '../services/contextApi';
 import { dummyUser } from '../services/data';
 import { cheaboxValidate } from '../services/validation';
+import { Data } from '../services/ContextApi';
 
 function CommonInput({ id }) {
     const { userData, setUserData } = useContext(Data);
@@ -60,7 +60,7 @@ function CommonInput({ id }) {
     };
     const handleDelete = () => {
         if (confirm("Are you sure you want to delete this user?")) {
-            const updatedUserData = userData.filter((user) =>user.id != id);
+            const updatedUserData = userData.filter((user) => user.id != id);
             setUserData(updatedUserData);
             navigate("/user");
         }
@@ -81,7 +81,7 @@ function CommonInput({ id }) {
                         <Select name="status"
                             value={values.status}
                             onChange={handleChange} >
-                            <Options>Please Select</Options>
+                            <Options value="">Please Select</Options>
                             <Options>Active</Options>
                             <Options>Deactive</Options>
                         </Select>
@@ -113,7 +113,7 @@ function CommonInput({ id }) {
                     ))}
                 </CheakBoxDiv>
                 <ButtonDiv>
-                    <AddUserButton type="submit">{id?"Update" : "Submit"}</AddUserButton>
+                    <AddUserButton type="submit">{id ? "Update" : "Submit"}</AddUserButton>
                 </ButtonDiv>
             </CheakBoxForm>
             <ButtonDiv>

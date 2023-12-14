@@ -1,5 +1,4 @@
 import * as Yup from "yup";
-import { CheakBoxDiv } from "../style_component/productStyle";
 
 export const LoginSchema = Yup.object({
     number :  Yup.string()
@@ -20,6 +19,6 @@ export const PassSchema = Yup.object({
 
 
 export const cheaboxValidate = Yup.object({
-    name : Yup.string().required("Role is required"),
+    name : Yup.string().trim().required("Role is required"),
     status : Yup.string().required("Status is required"),
 })
