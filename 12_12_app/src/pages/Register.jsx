@@ -1,17 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Container, HeadingTag, RegisterForm, SubmitButton } from '../style_component/Style'
+import { Container, HeadingTag, RegisterDiv, RegisterForm, SubmitButton } from '../style_component/Style'
 import Heading from '../component/Heading'
 import OtpInputs from '../component/OtpInput'
 import { useFormik } from 'formik'
-import { toast } from 'react-toastify';
+import {useNavigate} from 'react-router-dom'
 import { validOtp } from '../services/data'
 import Welcome from '../component/Common'
-import { MobileNum } from '../services/contextApi'
+import { Data } from '../services/contextApi'
 
 function Register() {
   const [otp, setOtp] = useState("")
   const [show, setShow] = useState(true)
-  const { mobileNumber } = useContext(MobileNum)
+  const { mobileNumber,setMobileNumber } = useContext(Data)
+  const navigate = useNavigate()
   const validate = values => {
     const errors = {};
     if (!otp) {
@@ -25,7 +26,7 @@ function Register() {
     initialValues: { otp: "" },
     validate,
     onSubmit: () => {
-      validOtp == Number(otp) ? toast.success('OTP verified') : setErrors({ otp: 'invalid Otp' });
+      validOtp == Number(otp) ?navigate('/user') : setErrors({ otp: 'invalid Otp' });
     },
   });
   useEffect(() => {
@@ -38,12 +39,14 @@ function Register() {
       {
         show ?
           <>
-            <RegisterForm onSubmit={handleSubmit}>
+            <RegisterDiv>
               <HeadingTag>Register</HeadingTag>
               <Heading setShow={setShow} />
-              <OtpInputs setOtp={setOtp} errors={errors} />
-              <SubmitButton type='submit'>SUBMIT</SubmitButton>
-            </RegisterForm>
+              <RegisterForm onSubmit={handleSubmit}>
+                <OtpInputs setOtp={setOtp} errors={errors} />
+                <SubmitButton type='submit'>SUBMIT</SubmitButton>
+              </RegisterForm>
+            </RegisterDiv>
           </> :
           <>
             <Welcome text="Register" setShow={setShow} />

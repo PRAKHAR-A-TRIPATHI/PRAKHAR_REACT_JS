@@ -4,13 +4,15 @@ import OtpInputs from './OtpInput';
 import { toast } from 'react-toastify';
 import PasswordInput from './PasswordInput';
 import { useFormik } from 'formik';
+import {useNavigate} from 'react-router-dom'
 import { instialValue, validOtp, validPassword } from '../services/data';
-import { Container, FlexDiv, HeadingTag, LogginForm, SubmitButton, Text, ToggleButton } from '../style_component/Style'
+import { Container, FlexDiv, HeadingTag, LogginDiv, LogginForm, SubmitButton, Text, ToggleButton } from '../style_component/Style'
 
 function LoginComp({ setShow }) {
     const [opration, setOpration] = useState(false);
     const [togglePass, setTogglePass] = useState(false);
     const [otp, setOtp] = useState("");
+    const navigate = useNavigate();
     const validate = values => {
         const errors = {};
         if (opration) {
@@ -31,29 +33,31 @@ function LoginComp({ setShow }) {
         validate,
         onSubmit: (values, action) => {
             if (opration) {
-                validOtp == Number(otp) ? toast.success('login sussefully') : setErrors({ otp: 'invalid Otp' });
+                validOtp == Number(otp) ?navigate('/user') : setErrors({ otp: 'invalid Otp' });
             } else {
-                validPassword === values.password ? toast.success('login sussefully ') : setErrors({ password: 'invalid Password' });
+                validPassword === values.password ? navigate('/user') : setErrors({ password: 'invalid Password' });
             }
         }
     });
     return (
         <Container>
-            <LogginForm onSubmit={handleSubmit}>
+            <LogginDiv>
                 {opration && <HeadingTag>Login</HeadingTag>}
                 <Heading setShow={setShow} />
-                {opration ?
-                    <OtpInputs setOtp={setOtp} errors={errors} />
-                    :
-                    <PasswordInput values={values} handleChange={handleChange} togglePass={togglePass} setTogglePass={setTogglePass} errors={errors} touched={touched} />
-                }
+                <LogginForm onSubmit={handleSubmit}>
+                    {opration ?
+                        <OtpInputs setOtp={setOtp} errors={errors} />
+                        :
+                        <PasswordInput values={values} handleChange={handleChange} togglePass={togglePass} setTogglePass={setTogglePass} errors={errors} touched={touched} />
+                    }
+                    <SubmitButton type='submit'>SUBMIT</SubmitButton>
+                </LogginForm>
                 <FlexDiv>
                     <ToggleButton color='blue' onClick={() => setOpration(!opration)}>
                         {opration ? "Login Via Password" : "Or Login Via Otp"}
                     </ToggleButton >
                 </FlexDiv>
-                <SubmitButton type='submit'>SUBMIT</SubmitButton>
-            </LogginForm>
+            </LogginDiv>
         </Container>
     )
 }

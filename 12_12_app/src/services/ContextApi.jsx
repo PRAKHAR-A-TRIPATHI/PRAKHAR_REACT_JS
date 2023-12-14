@@ -1,12 +1,14 @@
 import React, { createContext, useState } from 'react'
-export const MobileNum = createContext();
+import { intialUser } from './data';
+export const Data = createContext();
 
 function contextApi({ children }) {
     const [mobileNumber, setMobileNumber] = useState("")
+    const[userData, setUserData] = useState(intialUser)
     return (
-        <MobileNum.Provider value={{ mobileNumber, setMobileNumber }}>
+        <Data.Provider value={{ mobileNumber, setMobileNumber,userData, setUserData }}>
             {children}
-        </MobileNum.Provider>
+        </Data.Provider>
     )
 }
 

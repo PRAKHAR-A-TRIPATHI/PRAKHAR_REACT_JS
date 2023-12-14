@@ -57,8 +57,7 @@ export const Text = styled.p`
  color: ${(({ color }) => color)};
  
 `;
-export const Changebutton = styled.div`
-cursor: context-menu;
+export const Changebutton = styled.button`
 border:none;
 background-color:white;
  padding: 5px 0px;
@@ -90,13 +89,17 @@ background-color: blue;
   margin-top: 10px;
   width: 100%;
 `;
-export const LogginForm = styled.form`
+export const LogginDiv = styled.div`
 background-color:white;
 border: 1px solid #ddd;
 padding: 20px;
 width: 400px;
 border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+export const LogginForm = styled.form`
+background-color:white;
+border-radius: 8px;
 `;
 export const OtpInput = styled.input`
 width: 40px;
@@ -124,7 +127,7 @@ display: block;
   right: 5%;
   top: 30%;
 `;
-export const ToggleButton = styled.div`
+export const ToggleButton = styled.button`
 cursor: context-menu;
 border:none;
 background-color:white;
@@ -133,11 +136,16 @@ background-color:white;
  color: ${(({ color }) => color)};
  
 `;
-export const RegisterForm = styled.form`
+export const RegisterDiv = styled.div`
 background-color:white;
 border: 1px solid #ddd;
 padding: 20px;
 width: 400px;
 border-radius: 8px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+export const RegisterForm = styled.form`
+background-color:white;
+border-radius: 8px;
+
 `;

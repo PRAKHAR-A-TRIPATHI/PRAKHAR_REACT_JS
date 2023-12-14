@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Container, Heading, SubmitButton, WelcomeForm } from '../style_component/Style'
 import MobileInput from './MobileInput'
-import { MobileNum } from '../services/contextApi';
+import { Data } from '../services/contextApi';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { instialValue, number } from '../services/data';
@@ -9,24 +9,17 @@ import { LoginSchema } from '../services/validation';
 
 function Welcome({ setShow, text }) {
   const navigate = useNavigate();
-  const { setMobileNumber } = useContext(MobileNum);
+  const { setMobileNumber } = useContext(Data);
   const { values, errors, touched, handleChange, handleSubmit, setErrors } = useFormik({
     initialValues: instialValue,
     validationSchema: LoginSchema,
     onSubmit: (values, action) => {
-      if (text === "Welcome") {
-        if (number == values.number) {
-          setShow((pre)=>!pre);
-        } else {
-          navigate('/register')
-        }
-
+      if (number == values.number) {
+        navigate('/login')
+        setShow((pre) => !pre);
       } else {
-        if (number == values.number) {
-          setErrors({ number: "number already exists" })
-        } else {
-          setShow((pre) => !pre)
-        }
+        navigate('/register');
+        setShow((pre) => !pre);
       }
       setMobileNumber(values.number)
     }

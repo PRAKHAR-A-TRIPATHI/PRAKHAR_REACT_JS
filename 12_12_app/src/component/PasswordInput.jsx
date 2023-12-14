@@ -5,7 +5,7 @@ function PasswordInput({ togglePass, setTogglePass, handleChange, values, errors
     return (
         <>
             <FlexDiv>
-                <InputLabel>Password</InputLabel> :
+                <InputLabel>Password:</InputLabel> 
             </FlexDiv>
             <PasswordInputDiv >
                 <Input

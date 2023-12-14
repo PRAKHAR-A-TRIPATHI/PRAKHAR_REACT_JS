@@ -10,6 +10,6 @@ export const Global = createGlobalStyle`
 body{
     height:100vh;
     display:grid;
-    place-items:center;
+    // place-items:center;
 }
 `

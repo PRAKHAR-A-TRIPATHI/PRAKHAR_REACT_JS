@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { MobileNum } from '../services/contextApi'
+import { Data } from '../services/contextApi'
 import { Changebutton, FlexDiv,  Mobilespan, Text } from '../style_component/Style'
 
 function Heading({setShow }) {
-    const { mobileNumber } = useContext(MobileNum);
+    const { mobileNumber } = useContext(Data);
     return (
         <>
             <FlexDiv>
